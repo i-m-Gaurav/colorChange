@@ -1,52 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-
-    body{
-        padding: 0;
-        margin: 0;
-    }
-    .main{
-        height: 100px;
-        
-        background-color: red;
-        display: flex;
-        flex-direction: row;
-
-    }
-    .head1{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 50px;
-        width: 50px;
-        background-color: blue;
-        flex: 1;
-    }
-    .head2{
-        height: 50px;
-        width: 50px;
-        background-color: skyblue;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-</style>
-<body>
-
-    <div class="main">
-        <div class="head1">
-            <h1>Heading</h1>
-        </div>
-        <div class="head2">
-            <h1>❤️</h1>
-        </div>
+<html>
+  <head>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      function changeColor(color) {
+        document.documentElement.style.transition = "background-color 1s ease";
+        document.documentElement.style.backgroundColor = color;
+      }
+    </script>
+  </head>
+  <body class="flex justify-center mt-10">
+    <div class="color">
+      <h2 class="font-bold text-xl mb-5 text-center shadow">Choose Color</h2>
+      <select
+        class="w-28 text-center shadow py-2 rounded-lg border border-gray-400 appearance-none focus:outline-none focus:border-transparent"
+        id="colorPicker"
+        onchange="changeColor(this.value)"
+      >
+        <option value="#9400D3">Violet</option>
+        <option value="#4B0082">Indigo</option>
+        <option value="#0000FF">Blue</option>
+        <option value="#00FF00">Green</option>
+        <option value="#FFFF00">Yellow</option>
+        <option value="#FFA500">Orange</option>
+        <option value="#FF0000">Red</option>
+      </select>
     </div>
-    
-</body>
+  </body>
 </html>
